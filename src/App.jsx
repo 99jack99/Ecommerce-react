@@ -1,11 +1,22 @@
-import './App.css'
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
+import Header from "./components/Header/Header"
+/* import Footer from './components/Footer/Footer' */
+
+import './App.scss'
 
 function App() {
 
 
   return (
     <div className="App">
-      HEY LOCO
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          
+        </Routes>
+      {/* <Footer/> */}
+      </BrowserRouter>
+      
     </div>
   )
 }
