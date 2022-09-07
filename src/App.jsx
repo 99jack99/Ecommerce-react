@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import Header from "./components/Header/Header"
-/* import Footer from './components/Footer/Footer' */
+import Footer from './components/Footer/Footer'
 
 import './App.scss'
 
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           
         </Routes>
-      {/* <Footer/> */}
+      <Footer/>
       </BrowserRouter>
       
     </div>
