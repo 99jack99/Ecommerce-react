@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
 
-    border-bottom: 0.5em solid pink;
+    border-bottom: 0.5em solid #ffc0cb;
 
     
 
@@ -25,11 +25,13 @@
 
         width: 99vw;
         height: 7vh;
-
+        font-size: 1.1em;
+        font-weight: bold;
+        
         .navLogo{
             /* background-color: green; */
             margin-left: 7em;
-    
+            
             
         }
 
@@ -45,6 +47,12 @@
             margin-left: 3em;
             margin-right: 3em;
            }
+
+            .cartIcon{
+            width: 10em;
+            height: 10em;
+            background-color: white;
+           } 
         }
 
     }

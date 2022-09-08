@@ -11,7 +11,9 @@ const Header = () => {
             <div className="navItems">
                 <div className="navItem">Log In</div>
                 <div className="navItem">Sign up</div>
-                <div className="navItem">[CART]</div>
+                <div className="navItem">
+                  [cart]
+                </div>
             </div>
         </div>
     </div>

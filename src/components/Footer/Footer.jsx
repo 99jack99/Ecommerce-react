@@ -12,8 +12,8 @@ const Footer = () => {
           <div className="footItemTittle">HELP</div>
           <div className="footItemPoints">
             <ul>
-              <li>Llamanos</li>
-              <li>Preguntas Frecuentes</li>
+              <li>Call us</li>
+              <li>FAQ</li>
             </ul>
           </div>
         </div>
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
 
       <div className="footUbi">
-        <div>ESPAÑA | ESPAÑA - VALENCIA</div>
+        <div>SPAIN | SPAIN - VALENCIA</div>
       </div>
     </div>
   );
