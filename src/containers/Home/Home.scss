@@ -1,7 +1,7 @@
  
 #homeWall{
 
-    background-image: url(../../assets/Imgs/home.jpg);
+    background-image: url(../../../public/HeroImg/home.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -24,7 +24,8 @@
             writing-mode: vertical-lr;
             margin: 4em;
 
-            font-family: monospace;
+            font-family: Satista;
+            color: black;
             font-size: 1.5em;
         }
     }
@@ -60,8 +61,9 @@
         .infoButton{
 
             margin: 2em;
-            text-transform: uppercase;
-            font-family: monospace;
+            
+            font-family: Satista;
+            font-size: 1.2em;
         }
     }
 }

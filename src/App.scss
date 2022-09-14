@@ -1,3 +1,18 @@
+@font-face {
+    font-family: Satista;
+    src: url(../public/Fonts/Satista.otf);
+}
+
+@font-face {
+    font-family: Moun-light;
+    src: url(../public/Fonts/Mountella/MountellaTrial-Light.ttf);
+}
+
+@font-face {
+    font-family: Moun-Med;
+    src: url(../public/Fonts/Mountella/MountellaTrial-Medium.ttf);
+}
+
 body{
    
     color: #fff;
@@ -7,6 +22,9 @@ body{
     font-size: 1.2em;
 
     width: 100vw;
-    
 
+    font-family: Moun-Med;
+    
+    
+    
 }
