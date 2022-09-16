@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import Header from "./components/Header/Header"
 import Footer from './components/Footer/Footer'
 import Home from './containers/Home/Home'
+import Login from './containers/User/Login/Login'
+import Signup from './containers/User/Signup/Signup'
 
 import './App.scss'
 
@@ -13,7 +15,11 @@ function App() {
       <BrowserRouter>
       <Header/>
         <Routes>
-          <Route path="/" element={<Home/>}/> 
+
+        <Route path="/" element={<Home/>}/>  
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>   
+
         </Routes>
       <Footer/>
       </BrowserRouter>

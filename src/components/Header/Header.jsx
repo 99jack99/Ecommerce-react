@@ -1,4 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
+/* import { userData } from "../../containers/User/userSlice"; */
+
+import { NavLink, useNavigate, Link } from 'react-router-dom'
 
 import "./Header.scss";
 
@@ -10,8 +14,13 @@ const Header = () => {
           <img id="logoImg" src="../../../public/logo/zenlogo-b.png" alt="retard" />
         </div>
         <div className="navItems">
-          <div className="navItem">Log In</div>
-          <div className="navItem">Sign up</div>
+
+        <NavLink className="navItem" to="/">Home</NavLink>
+          
+          <NavLink className="navItem" to="/login">Login</NavLink>
+
+          <NavLink className="navItem" to="/signup">Signup</NavLink>
+
           <div className="navItem cartItem">
             <img
               id="cartIcon"
@@ -19,6 +28,7 @@ const Header = () => {
               alt="Cart bag"
             />
           </div>
+
         </div>
       </div>
     </div>

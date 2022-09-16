@@ -7,26 +7,21 @@ const Login = () => {
 
     return (
         <div className="loginWall">
-
-            <label className="labelItemLogin">
-                Email
-            </label>
-            <input className="inputItemLogin" type="email" name="email" onChange={updateCredentials} />
-
-            <label className="labelItemLogin">
-                Password
-            </label>
-            <input className="inputItemLogin" type="password" name="password" onChange={updateCredentials} />
-
-            <input className="submitLoginItem" type="submit" value="LOG IN" onClick={() => nosLogea()} />
-
-            <div className="errorMessage">
-                {msgError}
+            
+            <div className="leftContainer">
             </div>
 
-            <div className="addsign" onClick={() =>navigate("/signup")}>
-                Still without DreamFilm? <br /> Register now and get 100 hours free!
+            <div className="rightContainer">
+
+                <h2 id="loginText">LOGIN INTO YOUR ACCOUNT!</h2>
+
+                <input className="inputLogin" placeholder="Email" type="email" name="email" title="email" id="" />
+                <input className="inputLogin" placeholder="Password" type="password" name="password" title="password" id="" />
+
+                <h3 id="loginSlogan"> - Being fashioned as you never seen before -</h3>
+
             </div>
+
         </div>
     )
 
