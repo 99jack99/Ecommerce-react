@@ -1,48 +1,94 @@
 .signupWall {
-  height: 59vh;
+  height: 60vh;
   width: 100vw;
 
   display: flex;
   align-items: center;
   flex-direction: row;
 
+
+
+
   .leftContainerSign {
+    
     background-color: pink;
     width: 50%;
-    height: 60vh;
+    height: 65vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    #loginText {
-      color: red;
-    }
-
-    .inputSign {
-      padding: 0.5em;
-      margin: 0.5em;
-      width: 20em;
-
-      border-top-style: none;
-      border-right-style: none;
-      border-left-style: none;
-
-      border-radius: 0.5em;
-      border-bottom: 0.2em solid white;
-
-      background-color: black;
-      outline: none;
+    #signupText {
       color: white;
-      font-size: 1.1em;
+      text-transform: uppercase;
     }
+
+    .inputContainerSign{
+
+      padding: 1em;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+
+      .inputSign {
+        padding: 0.5em;
+       margin: 0.5em;
+        width: 12em;
+  
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+  
+        border-radius: 0.5em;
+        border-bottom: 0.2em solid white;
+  
+        background-color: black;
+        outline: none;
+        color: white;
+        font-size: 1.1em;
+      }
+    }
+
+    .wrongSign{
+      
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      
+     
+      padding-left: 2em;
+      padding-right: 2em;
+
+      .sendSign{
+        background-color: white;
+        width: 5em;
+        height: 2em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        cursor: pointer;
+        border-radius: 0.2em;
+      }
+    }
+
+    
   }
 
   .rightContainerSign {
+  
+    
     background-color: purple;
     width: 50%;
-    height: 60vh;
+    height: 65vh;
 
     background-image: url(../../../public/HeroImg/signup.jpg);
     background-repeat: no-repeat;
@@ -50,3 +96,4 @@
     background-position: center;
   }
 }
+

@@ -8,23 +8,55 @@ const Signup = () => {
       <div className="leftContainerSign">
         <h2 id="signupText">Want to join us? Just Sign up!</h2>
 
-        <input
-          className="inputSign"
-          placeholder="Email"
-          type="email"
-          name="email"
-          title="email"
-          id=""
-        />
+        <div className="inputContainerSign">
+          <input
+            placeholder="Name"
+            className="inputSign"
+            type="name"
+            name="name"
+            title="name"
+          />
+          <input
+            placeholder="Surname"
+            className="inputSign"
+            type="surname"
+            name="surname"
+            title="surname"
+          />
+          <input
+            placeholder="Phone"
+            className="inputSign"
+            type="Phone"
+            name="Phone"
+            title="Phone"
+          />
+          <input
+            placeholder="address"
+            className="inputSign"
+            type="address"
+            name="address"
+            title="address"
+          />
+          <input
+            placeholder="Email"
+            className="inputSign"
+            type="email"
+            name="email"
+            title="email"
+          />
+          <input
+            placeholder="Password"
+            className="inputSign"
+            type="Password"
+            name="Password"
+            title="Password"
+          />
+        </div>
 
-        <input
-          className="inputSign"
-          placeholder="Password"
-          type="password"
-          name="password"
-          title="password"
-          id=""
-        />
+        <div className="wrongSign">
+          <div className="msgError"></div>
+          <div className="sendSign">Sign up</div>
+        </div>
       </div>
 
       <div className="rightContainerSign"></div>
