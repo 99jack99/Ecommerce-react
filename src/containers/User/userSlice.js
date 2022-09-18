@@ -5,7 +5,8 @@ import jwt from 'jwt-decode';
 export const userSlice = createSlice({
     name: 'user',
     initialState:{
-        token: ""
+        token: "",
+        user: ""
     },
     reducers:{
 
@@ -18,7 +19,9 @@ export const userSlice = createSlice({
 
         logout: (state, action) => {
             return{
-                ...state.initialState
+                ...state,
+                token: "",
+                user: ""
 
             }
         },
@@ -36,13 +39,14 @@ export const userSlice = createSlice({
 
 export const loginUser = (body) => async (dispatch) => {
     try{
-        const user = await axios.post('http://127.0.0.1:8000/login',body);
+        const user = await axios.post('http://127.0.0.1:3000/users/login',body);
         let decodeToken = jwt(user.data.token);
-        console.log(jwt(user.data.token))
+        
         if(user.status === 200){
             dispatch(login({
                 ...decodeToken,
-                token: user.data.token
+                token: user.data.token,
+                user: user.data.user
             }))
         }
 

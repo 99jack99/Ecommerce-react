@@ -1,0 +1,79 @@
+.profileWall{
+    background-image: url(../../../public/HeroImg/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100vw;
+    height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profileCard{
+        border: 0.2em solid black;
+        box-shadow: 0.5em 0.5em pink;
+
+        background-color: rgba(255, 192, 203, 0.199);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 1em;
+
+        border-radius: 1em;
+
+        width: 40vw;
+
+        font-size: 1.1em;
+
+        #profileTitle{
+            color: black;
+            font-size: 1.1em;
+
+        }
+
+        .profileUser{
+            color: black;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            text-transform: uppercase;
+        }
+
+        .profileInfo{
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .hrStyle{
+                width: 20em;
+            }
+            
+        }
+
+        .profileLogout{
+            width: 5em;
+            height: 2em;
+            background-color: pink;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 0.2em;
+
+            color: black;
+            cursor: pointer;
+        }
+
+    }
+}

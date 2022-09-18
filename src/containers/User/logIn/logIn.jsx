@@ -21,7 +21,7 @@ const Login = props => {
     const credentials = useSelector(userSelector);
 
     const updateUserInfoLogin = (e) => {
-        setDatosLogin({
+        setUserLogin({
             ...userLogin,
             [e.target.name]: e.target.value
         })
@@ -35,26 +35,18 @@ const Login = props => {
     },[]);
 
     const login = () => {
-        //Primero compruebo que los campos sean correctos
-            //Esta expresión regular ayuda a validar un email
-/*         if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g.test(datosLogin.email) ) {
-            setMsgError('Introduce un email válido');
-            return;
-        } */
-            //Esta expresión regular ayuda a validar un password (numero + letras en este caso)
-        if(datosLogin.password.length > 2){
-            
-            if (! /[\d()+-]/g.test(datosLogin.password) ) {
+       
+        if(userLogin.password.length > 2){
+            if (! /[\d()+-]/g.test(userLogin.password) ) {
                 setMsgError('Please reenter password');
                 return;
             };
+
         }else{
             setMsgError('Password must have at least 4 characters');
             return;
         }
-        //Por si acaso teníamos algo referenciado como error, lo limpiamos
-        /* setMsgError(""); */
-        //Dispatch es el método de redux que ejecuta el reducer
+        
         dispatch(loginUser({
             email: userLogin.email,
             password: userLogin.password
