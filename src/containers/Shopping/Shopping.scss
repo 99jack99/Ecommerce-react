@@ -1,6 +1,5 @@
 #shopWall {
-    width: 100vw;
-  
+  width: 100vw;
 
   .superiorBar {
     background-color: white;
@@ -18,35 +17,54 @@
     justify-content: center;
 
     border-bottom: 0.5em solid pink;
-    
-    .itemCategory{
-        padding: 1em;
 
-        margin-left: 1em;
-        margin-right: 1em;
-        font-size: 1.2em;
+    .itemCategory {
+      padding: 1em;
 
-        border-right: 0.1em solid black;
-        border-left: 0.1em solid black;
+      margin-left: 1em;
+      margin-right: 1em;
+      font-size: 1.2em;
 
-        cursor: pointer;
+      border-right: 0.1em solid black;
+      border-left: 0.1em solid black;
+
+      cursor: pointer;
     }
-
   }
 
-  .inferiorShop{
-    background-color: purple;
+  .inferiorShop {
+    background-image: linear-gradient(
+  335deg,
+  hsl(59deg 78% 50%) 0%,
+  hsl(47deg 100% 54%) 2%,
+  hsl(39deg 100% 58%) 5%,
+  hsl(29deg 100% 64%) 8%,
+  hsl(14deg 100% 69%) 13%,
+  hsl(355deg 100% 73%) 19%,
+  hsl(338deg 100% 70%) 26%,
+  hsl(326deg 100% 70%) 34%,
+  hsl(315deg 100% 71%) 43%,
+  hsl(304deg 73% 66%) 52%,
+  hsl(302deg 59% 61%) 60%,
+  hsl(300deg 49% 57%) 68%,
+  hsl(298deg 43% 52%) 75%,
+  hsl(296deg 40% 48%) 81%,
+  hsl(294deg 42% 44%) 86%,
+  hsl(292deg 44% 41%) 91%,
+  hsl(290deg 46% 37%) 96%,
+  hsl(288deg 49% 33%) 100%
+);
 
     padding: 2em;
 
-    height: 100vh;
     width: 100vw;
 
     box-sizing: border-box;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+
   }
 }

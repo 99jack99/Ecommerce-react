@@ -5,19 +5,19 @@ import axios from "axios"
 
 import "./Shopping.scss"
 
-/* import ProductCard from "../../Components/ProductCard/ProductCard" */
+import Productcard from "../../components/ProductCard/Productcard"
 
 const Shopping = (props) => {
 
     const [products, setProducts] = useState({
-        products: []
+        allproducts: []
     })
 
     useEffect(() => {
-        axios.get('https://ropaon.herokuapp.com/api/productall')
+        axios.get('http://127.0.0.1:3000/products/inventary')
             .then(resp => {
                 setProducts({
-                    products: resp.data.data
+                    allproducts: resp.data
                 })
             })
 
@@ -44,7 +44,16 @@ const Shopping = (props) => {
             </div>
 
             <div className="inferiorShop">
-                
+
+            {products.allproducts.map((allproducts, i) => (
+
+                    <div id="inferiorItemsPro" key={i}>
+                        <Productcard data={allproducts} key={i}/>
+                        
+                    </div>
+
+            ))}
+            
             </div>
 
 
