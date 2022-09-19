@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Home.scss"
-
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
 
@@ -18,9 +18,7 @@ const Home = () => {
 
             <div className="homeSectionRight">
 
-                <div className="shopButton">
-                    SHOP
-                </div>
+            <NavLink className="shopButton" to="/shopping">SHOP</NavLink>
 
                 <div className="infoButton">
                     we have more than 1000+ clothes, you can reach them with just one click!
