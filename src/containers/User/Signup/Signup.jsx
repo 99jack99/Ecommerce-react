@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signupUser } from "../userSlice";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import "./Signup.scss";
 const Signup = (props) => {
   const dispatch = useDispatch();
   let backhome = useNavigate();
-  
+
   const [msgError, setMsgError] = useState("");
 
   const [signup, setSignup] = useState({
@@ -24,7 +24,7 @@ const Signup = (props) => {
   const handleInput = (event) => {
     setSignup({
       ...signup,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -51,7 +51,7 @@ const Signup = (props) => {
       return;
     }
 
-    if (register.password.length > 5) {
+    /* if (signup.password.length > 3) {
       if (!/[\d()+-]/g.test(signup.password)) {
         setSignup({
           ...signup,
@@ -70,7 +70,7 @@ const Signup = (props) => {
       setSignup({
         ...signup,
         isError: true,
-        msgIsError: "Password must have at least 6 characters",
+        msgIsError: "Password must have at least 4 characters",
       });
       setTimeout(() => {
         setSignup({
@@ -80,7 +80,7 @@ const Signup = (props) => {
       }, 1000);
       return;
     }
-
+ */
     setSignup({
       ...signup,
       isError: false,
@@ -101,14 +101,14 @@ const Signup = (props) => {
       }, 1000);
       return;
 
-    } else if (signup.phone == "") {
+    } /* else if (signup.phone == "") {
       setMsgError("Phone cant be empty!");
       setTimeout(() => {
         setMsgError("");
       }, 1000);
       return;
 
-    } else if (signup.address == "") {
+    } */ else if (signup.address == "") {
       setMsgError("Address cant be empty!");
       setTimeout(() => {
         setMsgError("");
@@ -122,18 +122,25 @@ const Signup = (props) => {
       }, 1000);
       return;
 
-    } else if (signup.password == "") {
+    } /* else if (signup.password == "") {
       setMsgError("Password cant be empty!");
       setTimeout(() => {
         setMsgError("");
       }, 1000);
       return;
-    }
+    } */
 
     setMsgError("You have been sign up succesfully!");
 
     dispatch(
-      signupUser(signup.name, signup.surname,signup.phone, signup.address, signup.email, signup.password)
+      signupUser(
+        signup.name,
+        signup.surname,
+        signup.phone,
+        signup.address,
+        signup.email,
+        signup.password
+      )
     );
 
     setTimeout(() => {
@@ -198,8 +205,11 @@ const Signup = (props) => {
         </div>
 
         <div className="wrongSign">
+        <div className="msgError">{msgError}</div>
           <div className="msgError">{signup.msgIsError}</div>
-          <div className="sendSign" onSubmit={CorrectUser}>Sign up</div>
+          <div className="sendSign" onClick={CorrectUser}>
+            Sign up
+          </div>
         </div>
       </div>
 

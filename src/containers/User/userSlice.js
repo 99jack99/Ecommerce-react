@@ -61,7 +61,7 @@ export const logOut = () => (dispatch) => {
 
 export const signupUser = (name, surname, phone, address, email, password) => async (dispatch) => {
     try {
-        const user = await axios.post('http://127.0.0.1:8000/signup',
+        const user = await axios.post('http://127.0.0.1:3000/users/signup',
         {
             name: name,
             surname: surname,

@@ -6,18 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { userSelector } from "../../Containers/User/userSlice";
 
 import { useDispatch, useSelector } from "react-redux";
-/* import { arrayPurchase } from "../../Containers/Purchase/purchaseSlice"; */
-/* import { idProduct } from "../../Containers/Admin/adminSlice"; */
+
 
 const Productcard = props => {
   const navigate = useNavigate();
 
   const credentials = useSelector(userSelector);
-
-  /* const alertClick = (event) => (dispatch) => {
-        dispatch(arrayPurchase(event))
-        alert('Se ha añadido al carrito tu producto');
-    } */
 
   if (!credentials?.token) {
     return (
