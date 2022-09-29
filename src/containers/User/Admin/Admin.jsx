@@ -8,16 +8,15 @@ import { selectProduct } from "./AdminSlice";
 import axios from "axios";
 
 const Admin = (props) => {
-
   const pro = useSelector(selectProduct);
   let nPro = pro.id.id;
-
 
   const dispatch = useDispatch();
   const token = useSelector(userSelector);
 
   const [product, setProduct] = useState({
     id: "",
+    iddel: "",
     name: "",
     description: "",
     size: "",
@@ -47,7 +46,8 @@ const Admin = (props) => {
     );
   };
 
-  const updateProduct = (id, name, description, size, sex, price, stock) => async (dispatch) => {
+  const updateProduct =
+    (id, name, description, size, sex, price, stock) => async (dispatch) => {
       try {
         const config = {
           headers: {
@@ -58,7 +58,7 @@ const Admin = (props) => {
           name: name,
           description: description,
           sex: sex,
-          size:size,
+          size: size,
           price: price,
           stock: stock,
         };
@@ -80,49 +80,35 @@ const Admin = (props) => {
       }
     };
 
-    const deleteProduct = () => async (dispatch) => {
-      try {
-          const config = {
-              headers: {
-                  "Authorization": `Bearer ${token.token}`
-              }
-          }
-          const product = await axios.delete('http://127.0.0.1:3000/products/delete',
-          {id:nPro},
-          config);
-          
-          let response = product
-          if (response.status === 200) {
-              dispatch(theproduct(response.data))
-          }
-
-      } catch (error) {
-          console.log(error)
-      }
-  }
-
-  /* const deleteProduct = (id) => async () => {
-    console.log("HOLA");
+  const deleteProduct = (iddel) => async (dispatch) => {
+    console.log(product.iddel);
+    /* console.log(product); */
     try {
-      const productDel = await axios.delete(
-        "http://127.0.0.1:3000/products/delete",
-        {
-          headers: {
-            Authorization: `Bearer ${token.token}`,
-          },
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token.token}`,
         },
+      };
 
-        { id: id }
+      const body = {
+        id: product.iddel,
+      };
+
+      const product = await axios.delete(
+        "http://127.0.0.1:3000/products/delete",
+        body,
+        config
       );
 
-      let response = productDel;
+      let response = product;
       if (response.status === 200) {
-        console.log("Has borrado producto" + response);
+        console.log("bien");
+        dispatch(theproduct(response.data));
       }
     } catch (error) {
       console.log(error);
     }
-  }; */
+  };
 
   return (
     <div id="adminWall">
@@ -133,8 +119,9 @@ const Admin = (props) => {
       <input
         className="inputDel"
         placeholder="Id of the product"
-        name="id"
-        /* onChange={handleInput} */
+        name="iddel"
+        /* type="integer" */
+        onChange={handleInput}
       />
       <div
         id="deleteButton"
@@ -202,7 +189,9 @@ const Admin = (props) => {
           onChange={handleInput}
         />
 
-        <div className="upButton" onClick={updateProduct()}>UPDATE</div>
+        <div className="upButton" onClick={updateProduct()}>
+          UPDATE
+        </div>
       </div>
     </div>
   );
