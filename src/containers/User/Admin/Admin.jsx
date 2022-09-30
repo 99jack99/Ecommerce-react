@@ -16,7 +16,6 @@ const Admin = (props) => {
 
   const [product, setProduct] = useState({
     id: "",
-    iddel: "",
     name: "",
     description: "",
     size: "",
@@ -24,6 +23,18 @@ const Admin = (props) => {
     price: "",
     stock: "",
   });
+
+  const [delPro, setDelPro] = useState({
+    delId: ""
+  })
+
+  const anotherHandle = (event) =>{
+    console.log(delPro.delId);
+    setDelPro({
+      delId: event.target.value
+    });
+    console.log(delPro.delId);
+  };
 
   const handleInput = (event) => {
     setProduct({
@@ -80,30 +91,28 @@ const Admin = (props) => {
       }
     };
 
-  const deleteProduct = (iddel) => async (dispatch) => {
-    console.log(product.iddel);
-    /* console.log(product); */
+  const deleteProduct = () => async () => {
     try {
+
       const config = {
         headers: {
           Authorization: `Bearer ${token.token}`,
         },
       };
-
       const body = {
-        id: product.iddel,
+        id: delPro.delId
       };
 
-      const product = await axios.delete(
-        "http://127.0.0.1:3000/products/delete",
-        body,
-        config
+      const result = await axios.delete(
+        "http://127.0.0.1:3000/products/delete", body, config
       );
 
-      let response = product;
+      console.log(delPro.delId);
+
+      let response = result;
       if (response.status === 200) {
         console.log("bien");
-        dispatch(theproduct(response.data));
+        console.log(result);
       }
     } catch (error) {
       console.log(error);
@@ -119,9 +128,9 @@ const Admin = (props) => {
       <input
         className="inputDel"
         placeholder="Id of the product"
-        name="iddel"
+        name="delId"
         /* type="integer" */
-        onChange={handleInput}
+        onChange={anotherHandle}
       />
       <div
         id="deleteButton"
